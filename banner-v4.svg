@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="210" viewBox="0 0 820 210" role="img" aria-label="ibi6 banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="55%" stop-color="#0d1526"/>
+      <stop offset="100%" stop-color="#120a18"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="50%" stop-color="#ff2bd6"/>
+      <stop offset="100%" stop-color="#ff8a00"/>
+      <animate attributeName="x1" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;0;1" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="blob" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2bd6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff2bd6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <rect width="820" height="210" fill="url(#bg)"/>
+
+  <!-- floating nebula blobs -->
+  <circle cx="620" cy="70" r="90" fill="url(#blob)" filter="url(#soft)">
+    <animate attributeName="cx" values="600;680;600" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="60;100;60" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="150" r="80" fill="url(#blob2)" filter="url(#soft)">
+    <animate attributeName="cx" values="720;640;720" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- scanline -->
+  <rect x="0" width="820" height="2" fill="#00f0ff" opacity="0.18">
+    <animate attributeName="y" values="-4;214;-4" dur="3.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- hex grid sparks -->
+  <g stroke="#6cf" stroke-opacity="0.25" fill="none" stroke-width="1">
+    <path d="M520 35 L575 65 L575 125 L520 155 L465 125 L465 65 Z">
+      <animate attributeName="stroke-opacity" values="0.1;0.55;0.1" dur="2.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M640 25 L700 58 L700 122 L640 155 L580 122 L580 58 Z">
+      <animate attributeName="stroke-opacity" values="0.55;0.1;0.55" dur="3.1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- orbiting particles -->
+  <g transform="translate(640 100)">
+    <circle r="3" fill="#00f0ff" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="5s" repeatCount="indefinite"/>
+      <animateMotion path="M0,-48 A48,48 0 1,1 0,48 A48,48 0 1,1 0,-48" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.5" fill="#ff2bd6" filter="url(#glow)">
+      <animateMotion path="M0,38 A38,38 0 1,0 0,-38 A38,38 0 1,0 0,38" dur="3.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#ff8a00" filter="url(#glow)">
+      <animateMotion path="M28,0 A28,28 0 1,1 -28,0 A28,28 0 1,1 28,0" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="6" fill="#fff" opacity="0.9" filter="url(#glow)">
+      <animate attributeName="r" values="5;8;5" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- lightning path flashes -->
+  <path d="M500 40 L560 95 L530 95 L610 170" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" filter="url(#glow)" stroke-dasharray="160" stroke-dashoffset="160">
+    <animate attributeName="stroke-dashoffset" values="160;-160" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M760 30 L690 90 L730 90 L650 170" fill="none" stroke="#ff2bd6" stroke-width="2" stroke-linecap="round" filter="url(#glow)" stroke-dasharray="170" stroke-dashoffset="170">
+    <animate attributeName="stroke-dashoffset" values="170;-170" dur="2.6s" begin="0.7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="2.6s" begin="0.7s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- title -->
+  <text x="54" y="96" font-family="Georgia, 'Times New Roman', 'Songti SC', serif" font-size="64" font-weight="700" fill="url(#neon)" filter="url(#glow)">ibi6</text>
+  <text x="54" y="96" font-family="Georgia, 'Times New Roman', 'Songti SC', serif" font-size="64" font-weight="700" fill="#ffffff" opacity="0.18">ibi6</text>
+
+  <rect x="56" y="112" height="3" rx="1.5" fill="url(#neon)" filter="url(#glow)">
+    <animate attributeName="width" values="28;120;28" dur="3.4s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="56" y="150" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#c9d4ff" letter-spacing="1">
+    构筑看不见的管道 · 让想法自己长腿
+    <animate attributeName="opacity" values="0.55;1;0.55" dur="2.5s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- corner HUD ticks -->
+  <g stroke="#00f0ff" stroke-opacity="0.55" stroke-width="1.5" fill="none">
+    <path d="M20 20 H48 V48"/>
+    <path d="M800 20 H772 V48"/>
+    <path d="M20 190 H48 V162"/>
+    <path d="M800 190 H772 V162"/>
+    <animate attributeName="stroke-opacity" values="0.25;0.8;0.25" dur="2s" repeatCount="indefinite"/>
+  </g>
+</svg>
