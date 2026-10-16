@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./banner-v2.svg" alt="ibi6" width="720"/>
+<img src="./banner-v3.svg" alt="ibi6" width="720"/>
 
 ### ibi6
 

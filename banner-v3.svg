@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="210" viewBox="0 0 820 210" role="img" aria-label="ibi6 banner">
+  <defs>
+    <style>
+      .node { transform-box: fill-box; transform-origin: center; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; }
+      .pulse2 { animation: pulse 3.4s ease-in-out infinite 0.6s; }
+      .drift { animation: drift 6s ease-in-out infinite alternate; }
+      .glow { animation: glow 2.2s ease-in-out infinite alternate; }
+      .fadein { animation: fadein 1.2s ease-out both; }
+      .draw { stroke-dasharray: 220; stroke-dashoffset: 220; animation: draw 3.5s ease forwards infinite; }
+      @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.35; } 50% { transform: scale(1.35); opacity: 0.85; } }
+      @keyframes drift { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+      @keyframes glow { from { opacity: 0.55; } to { opacity: 1; } }
+      @keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes draw { 0% { stroke-dashoffset: 220; opacity: 0.15; } 40% { stroke-dashoffset: 0; opacity: 0.35; } 100% { stroke-dashoffset: 0; opacity: 0.2; } }
+    </style>
+  </defs>
+  <rect width="820" height="210" fill="#f4efe5"/>
+  <g class="drift" stroke="#171310" stroke-opacity="0.18" stroke-width="1" fill="none">
+    <path class="draw" d="M520 40 L600 90 L660 55 L720 110"/>
+    <path class="draw" d="M600 90 L580 150 L660 160" style="animation-delay:0.4s"/>
+    <path class="draw" d="M520 40 L560 130" style="animation-delay:0.8s"/>
+    <path class="draw" d="M720 110 L760 60" style="animation-delay:1.1s"/>
+    <path class="draw" d="M660 55 L660 160" style="animation-delay:1.5s"/>
+  </g>
+  <g fill="#171310">
+    <circle class="node pulse" cx="520" cy="40" r="4" fill-opacity="0.35"/>
+    <circle class="node pulse2" cx="660" cy="55" r="3.5" fill-opacity="0.35"/>
+    <circle class="node pulse" cx="720" cy="110" r="4.5" fill-opacity="0.35" style="animation-delay:0.3s"/>
+    <circle class="node pulse2" cx="580" cy="150" r="3.5" fill-opacity="0.35" style="animation-delay:0.9s"/>
+    <circle class="node pulse" cx="660" cy="160" r="4" fill-opacity="0.35" style="animation-delay:1.2s"/>
+    <circle class="node pulse2" cx="560" cy="130" r="3" fill-opacity="0.35" style="animation-delay:0.5s"/>
+    <circle class="node pulse" cx="760" cy="60" r="3.5" fill-opacity="0.35" style="animation-delay:1.4s"/>
+  </g>
+  <circle class="glow" cx="600" cy="90" r="7" fill="#e0522a" fill-opacity="0.9"/>
+  <circle cx="600" cy="90" r="14" fill="none" stroke="#e0522a" stroke-opacity="0.35">
+    <animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.45;0;0.45" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+  <g class="fadein">
+    <text x="56" y="98" font-family="Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', serif" font-size="60" font-weight="700" fill="#171310">ibi<tspan fill="#e0522a">6</tspan></text>
+    <rect x="58" y="112" width="46" height="3" fill="#e0522a">
+      <animate attributeName="width" values="0;46;46" keyTimes="0;0.35;1" dur="1.6s" fill="freeze"/>
+    </rect>
+    <text x="58" y="148" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#5f574b">构筑看不见的管道 · 让想法自己长腿</text>
+  </g>
+</svg>
